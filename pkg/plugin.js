@@ -32,10 +32,10 @@
         var rec = that.pluggable.getvar(that.dd.name, RECORD);
         if (typeof rec != 'object') { return; };
         //console.log('PACKETA!', rec);
-        if (typeof rec.apiKey == 'string') { 
+        if (typeof rec.apiKey == 'string') {
           this.packetaApiKey = rec.apiKey;
         };
-        if ((typeof rec.reset == 'boolean')&&(rec.reset)) { 
+        if ((typeof rec.reset == 'boolean')&&(rec.reset)) {
           this.packetaOptions = {};
         };
         if (typeof rec.appIdentity == 'string') {
@@ -56,22 +56,22 @@
         if (typeof rec.packetConsignment == 'string') {
           this.packetaOptions.packetConsignment = rec.packetConsignment;
         };
-        if (typeof rec.weight == 'numeric') {
+        if (typeof rec.weight == 'number') {
           this.packetaOptions.weight = rec.weight;
         };
-        if (typeof rec.length == 'numeric') {
+        if (typeof rec.length == 'number') {
           this.packetaOptions.length = rec.length;
         };
-        if (typeof rec.width == 'numeric') {
+        if (typeof rec.width == 'number') {
           this.packetaOptions.width = rec.width;
         };
-        if (typeof rec.depth == 'numeric') {
+        if (typeof rec.depth == 'number') {
           this.packetaOptions.depth = rec.depth;
         };
-        if (typeof rec.longitude == 'numeric') {
+        if (typeof rec.longitude == 'number') {
           this.packetaOptions.longitude = rec.longitude;
         };
-        if (typeof rec.latitude == 'numeric') {
+        if (typeof rec.latitude == 'number') {
           this.packetaOptions.latitude = rec.latitude;
         };
         if (typeof rec.livePickupPoint == 'boolean') {
@@ -80,7 +80,7 @@
         if (typeof rec.expeditionDay == 'string') {
           this.packetaOptions.expeditionDay = rec.expeditionDay;
         };
-        if (typeof rec.defaultPrice == 'float') {
+        if (typeof rec.defaultPrice == 'number') {
           this.packetaOptions.defaultPrice = rec.defaultPrice;
         };
         if (typeof rec.defaultCurrency == 'string') {
@@ -93,8 +93,8 @@
           this.open();
         };
       },
-      
-      
+
+
       this.showSelectedPickupPoint = function(point) {
         const saveElement = document.querySelector(".packeta-selector-value");
         // Add here an action on pickup point selection
@@ -114,7 +114,7 @@
           }
         }
       },
-      
+
       this.open = function() {
         //console.log('OPEN', that.packetaApiKey);
         if (!that.packetaApiKey) return;
@@ -127,7 +127,7 @@
       },
 
       this.init=function() {
-        
+
         //var elementType = $(this).prev().prop('nodeName');
         var elementType = $(that.element).prop('nodeName');
         //console.log('PACKETA', elementType);
